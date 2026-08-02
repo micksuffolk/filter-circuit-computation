@@ -10,12 +10,13 @@ pkg load control
 % Define filter parameters
 C = 20e-06;
 L = 80e-06;
+R = 0.1;
 
 % Setup a transfer function in the `s` domain [laplace]
 s = tf('s');
 
 % Transfer function for impedance [Zf]
-Zf = (L * s) + (1 /  (C * s));
+Zf = (L * s) + (1 /  (C * s)) + R;
 
 % Bode plot of the impedance response
 [bode_mag, bode_pha, bode_w] = bode(Zf);
@@ -44,4 +45,4 @@ xlabel('Frequency[Hz]');
 % Note, to calculate dB from the Cf calculation = 20*Log(Zf)
 f = 4000; % What frequency do we want to calculate the filter impedance?
 % L & C in series
-Zf_Ohms = abs(((1/(2*pi*f*C))*(-i)) + ((2*pi*f*L)*(i)));
+Zf_Ohms = abs(((1/(2*pi*f*C))*(-i)) + ((2*pi*f*L)*(i)) + R);
