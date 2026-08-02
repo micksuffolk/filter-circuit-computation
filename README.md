@@ -100,7 +100,7 @@ _Bode plot (filter impedance)_
 | Feature | Comments |
 | :------ | :------ |
 | Reference paper(s) | N/A |
-| Use case(s) | Shunt filter. Filtering the high-order current harmonics at the inverter switching frequency |
+| Use case(s) | Shunt filter. Filtering the high-order current harmonics at the inverter switching frequency, damping resistor used to limit the magnitude of the filter response |
 | Source code | [series_lc.m](./src/series/series_lc.m) |
 
 <img src="./docs/schematics/D000001_Series_LC.svg" width="450"/>
