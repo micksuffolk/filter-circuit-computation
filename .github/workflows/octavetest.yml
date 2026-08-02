@@ -1,5 +1,11 @@
 name: Github Action for Octave
-on: [push, pull_request]
+on:
+  push:
+    paths:
+      - '**.m'
+  pull_request:
+    paths:
+      - '**.m'
 jobs:
   octave_test:
     runs-on: ubuntu-latest
