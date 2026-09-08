@@ -12,7 +12,8 @@ jobs:
     steps:
     - uses: actions/checkout@v7
     - run: |
-        sudo apt-get install octave octave-control
+        sudo apt-get update
+        sudo apt-get install -y octave octave-control
     - run: octave --eval "ctpf"
       working-directory: ./src/ctpf/
     - run: octave --eval "lcl"
