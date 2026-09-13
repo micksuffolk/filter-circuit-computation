@@ -9,6 +9,8 @@ Electrical filter transfer functions and calculations, based on standardised and
 * [drawio](#drawio)
 * [Filters](#filters)
     * [Terminology](#terminology)
+    * [Capacitor Filter](#capacitor)
+    * [Inductor (Choke) Filter](#inductor---choke)
     * [C-Type Passive Filter - CTPF](#c-type-passive-filter---ctpf)
     * [LCL Filter](#lcl-filter)
     * [Series LC Filter](#series-lc-filter)
@@ -50,6 +52,46 @@ The aim of this repository is to gather concise and useful filter design and res
     - Prevent a particular frequency from entering further into a system by providing a shunt path of low impedance to the relevant frequency.
 - Series filters
     - Prevent a particular frequency from entering the system by presenting a large series impedance to the relevant frequency.
+
+&nbsp;
+
+
+
+### Capacitor
+
+| Feature | Comments |
+| :------ | :------ |
+| Reference paper(s) | Experimental Investigation of the Frequency Response of an LC-Filter and Power Transformer for Grid Connection, Christoffer Fjellstedt, Johan Forslund, Karin Thomas. DOI 10.3390/en16155784 |
+| Use case(s) | Shunt filter. Filtering high order harmonics and frequencies for EMC in a power system |
+| Source code | [c.m](./src/components/c.m) |
+
+<img src="./docs/schematics/D000001_C.svg" width="450"/>
+
+_Filter circuit_
+
+<img src="./docs/lib/images/c.svg" width="450"/>
+
+_Bode plot (filter impedance)_
+
+&nbsp;
+
+
+
+### Inductor - Choke
+
+| Feature | Comments |
+| :------ | :------ |
+| Reference paper(s) | Experimental Investigation of the Frequency Response of an LC-Filter and Power Transformer for Grid Connection, Christoffer Fjellstedt, Johan Forslund, Karin Thomas. DOI 10.3390/en16155784 |
+| Use case(s) | Series filter. Sine wave filtering in an AC power system. Paralleling chokes for connecting multiple drives to a single motor |
+| Source code | [l.m](./src/components/l.m) |
+
+<img src="./docs/schematics/D000001_L.svg" width="450"/>
+
+_Filter circuit_
+
+<img src="./docs/lib/images/l.svg" width="450"/>
+
+_Bode plot (filter impedance)_
 
 &nbsp;
 
